@@ -2,7 +2,7 @@
 
 A simple web tool to convert between V2Ray JSON configs and share links.
 
-🔗 **[Try it online](https://yourusername.github.io/v2ray-converter/)**
+🔗 **[Try it online](https://iaghapour.github.io/v2ray-converter/)**
 
 ## What is this?
 
