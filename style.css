@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ==================== Base Styles ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0e27;
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==================== Header ==================== */
+.header {
+    padding: 1.5rem 2rem;
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.3px;
+}
+
+/* YouTube Button */
+.yt-btn {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.yt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(255, 0, 0, 0.6);
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4); }
+    50% { box-shadow: 0 4px 30px rgba(255, 0, 0, 0.7); }
+}
+
+/* ==================== Main Container ==================== */
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ==================== Editor ==================== */
+.editor-wrap {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    transition: border-color 0.2s;
+}
+
+.editor-wrap:focus-within {
+    border-color: #6366f1;
+}
+
+.editor-header {
+    padding: 0.75rem 1rem;
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid #334155;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #f1f5f9;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    resize: none;
+    direction: ltr;
+}
+
+textarea::placeholder {
+    color: #475569;
+    opacity: 0.6;
+}
+
+/* ==================== Buttons ==================== */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.primary-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.secondary-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn {
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Primary Buttons - Different Colors */
+.btn-primary-purple {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary-purple:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary-cyan {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.btn-primary-cyan:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(6, 182, 212, 0.4);
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+    background: #334155;
+    color: #cbd5e1;
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+/* Ghost Buttons */
+.btn-ghost {
+    background: transparent;
+    color: #64748b;
+    padding: 0.6rem 0.8rem;
+}
+
+.btn-ghost:hover {
+    background: rgba(255,255,255,0.05);
+    color: #94a3b8;
+}
+
+/* Danger Buttons */
+.btn-danger {
+    background: transparent;
+    color: #f87171;
+}
+
+.btn-danger:hover {
+    background: rgba(248, 113, 113, 0.1);
+}
+
+/* File Input */
+.file-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.file-btn input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* ==================== Toast Notification ==================== */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 0.875rem 1.25rem;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    font-size: 1rem;
+}
+
+.toast.success {
+    border-left: 3px solid #10b981;
+}
+
+.toast.error {
+    border-left: 3px solid #ef4444;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 1200px) {
+    .wrapper {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .yt-btn {
+        order: -1;
+        width: 100%;
+        justify-content: center;
+    }
+}
